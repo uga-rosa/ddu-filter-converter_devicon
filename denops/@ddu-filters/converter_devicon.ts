@@ -45,12 +45,22 @@ export class Filter extends BaseFilter<Params> {
         const padding = " ".repeat(filterParams.padding);
         item.display = `${padding}${icon} ${display}`;
 
-        item.highlights = [...highlights, {
-          name: HIGHLIGHT_NAME,
-          hl_group,
-          col: filterParams.padding + 1,
-          width: byteLen(icon),
-        }];
+        const col = filterParams.padding + 1;
+        const width = byteLen(icon);
+        const offset = col + width;
+
+        item.highlights = [
+          ...highlights.map((hl) => {
+            hl.col += offset;
+            return hl;
+          }),
+          {
+            name: HIGHLIGHT_NAME,
+            hl_group,
+            col,
+            width,
+          },
+        ];
       }
 
       return item;
