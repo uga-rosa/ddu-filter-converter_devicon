@@ -32,35 +32,38 @@ export class Filter extends BaseFilter<Params> {
     items: DduItem[];
   }): Promise<DduItem[]> {
     const { denops, filterParams, items } = args;
+    const padding = " ".repeat(filterParams.padding);
     return Promise.all(items.map(async (item) => {
       const { word, display = word, highlights = [] } = item;
 
-      // Icon & highlight is already added
+      // Icon & highlight is already added (nvim-web-devicons)
       if (highlights.some((item) => item.name === HIGHLIGHT_NAME)) {
         return item;
       }
 
       const { icon, hl_group } = await this.getIconHl(denops, word);
-      if (icon && hl_group) {
-        const padding = " ".repeat(filterParams.padding);
+
+      // vim-devicon support only icon.
+      if (icon && !display.startsWith(padding + icon)) {
         item.display = `${padding}${icon} ${display}`;
 
         const col = filterParams.padding + 1;
         const width = byteLen(icon);
         const offset = col + width;
 
-        item.highlights = [
-          ...highlights.map((hl) => {
-            hl.col += offset;
-            return hl;
-          }),
-          {
-            name: HIGHLIGHT_NAME,
-            hl_group,
-            col,
-            width,
-          },
-        ];
+        highlights.forEach((hl) => hl.col += offset);
+
+        if (hl_group) {
+          item.highlights = [
+            ...highlights,
+            {
+              name: HIGHLIGHT_NAME,
+              hl_group,
+              col,
+              width,
+            },
+          ];
+        }
       }
 
       return item;
