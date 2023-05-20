@@ -2,7 +2,7 @@
 
 Add devicon to files
 
-![image](https://github.com/uga-rosa/ddu-filter-converter_devicon/assets/82267684/1d6e894c-17f8-4709-b675-3374811588c4)
+![image](https://user-images.githubusercontent.com/82267684/239666866-ec0874d6-2b96-44ba-8669-ef9d741cf706.png)
 
 # Requirements
 
