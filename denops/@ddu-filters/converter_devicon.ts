@@ -37,6 +37,19 @@ function getPath(item: DduItem): string | undefined {
   }
 }
 
+async function getIconHl(
+  denops: Denops,
+  filename: string,
+): Promise<IconData> {
+  const retval = await denops.call(
+    "ddu#filter#converter#devicon#get_icon_hl",
+    filename,
+  );
+  assertArray(retval, isString);
+  const [icon, hl_group] = retval;
+  return { icon, hl_group };
+}
+
 export class Filter extends BaseFilter<Params> {
   filter(args: {
     denops: Denops;
@@ -57,7 +70,7 @@ export class Filter extends BaseFilter<Params> {
         return item;
       }
 
-      const { icon, hl_group } = await this.getIconHl(denops, path);
+      const { icon, hl_group } = await getIconHl(denops, path);
 
       // vim-devicon support only icon.
       if (icon && !display.startsWith(padding + icon)) {
@@ -84,19 +97,6 @@ export class Filter extends BaseFilter<Params> {
 
       return item;
     }));
-  }
-
-  async getIconHl(
-    denops: Denops,
-    filename: string,
-  ): Promise<IconData> {
-    const retval = await denops.call(
-      "ddu#filter#converter#devicon#get_icon_hl",
-      filename,
-    );
-    assertArray(retval, isString);
-    const [icon, hl_group] = retval;
-    return { icon, hl_group };
   }
 
   params(): Params {
