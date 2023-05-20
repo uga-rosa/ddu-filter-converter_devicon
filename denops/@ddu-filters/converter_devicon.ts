@@ -29,7 +29,6 @@ function byteLen(str: string) {
 
 function getPath(item: DduItem): string | undefined {
   if (
-    item.action != null &&
     typeof item.action === "object" &&
     item.action != null &&
     "path" in item.action &&
