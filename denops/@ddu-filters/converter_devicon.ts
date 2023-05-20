@@ -71,7 +71,10 @@ export class Filter extends BaseFilter<Params> {
         return item;
       }
 
-      const { icon = filterParams.defaultIcon, hl_group } = await getIconHl(denops, path);
+      const {
+        icon = filterParams.defaultIcon,
+        hl_group,
+      } = await getIconHl(denops, path);
 
       // vim-devicon support only icon.
       if (!display.startsWith(padding + icon)) {
