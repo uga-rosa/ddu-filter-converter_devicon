@@ -25,6 +25,18 @@ function byteLen(str: string) {
   return ENCODER.encode(str).length;
 }
 
+function getPath(item: DduItem): string | undefined {
+  if (
+    item.action != null &&
+    typeof item.action === "object" &&
+    item.action != null &&
+    "path" in item.action &&
+    typeof item.action.path === "string"
+  ) {
+    return item.action.path;
+  }
+}
+
 export class Filter extends BaseFilter<Params> {
   filter(args: {
     denops: Denops;
@@ -34,6 +46,10 @@ export class Filter extends BaseFilter<Params> {
     const { denops, filterParams, items } = args;
     const padding = " ".repeat(filterParams.padding);
     return Promise.all(items.map(async (item) => {
+      const path = getPath(item);
+      if (path === undefined) {
+        return item;
+      }
       const { word, display = word, highlights = [] } = item;
 
       // Icon & highlight is already added (nvim-web-devicons)
@@ -41,7 +57,7 @@ export class Filter extends BaseFilter<Params> {
         return item;
       }
 
-      const { icon, hl_group } = await this.getIconHl(denops, word);
+      const { icon, hl_group } = await this.getIconHl(denops, path);
 
       // vim-devicon support only icon.
       if (icon && !display.startsWith(padding + icon)) {
