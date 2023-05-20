@@ -7,6 +7,7 @@ import {
   assertArray,
   isString,
 } from "https://deno.land/x/unknownutil@v2.1.1/mod.ts";
+import { basename } from "https://deno.land/std@0.188.0/path/win32.ts";
 
 const HIGHLIGHT_NAME = "ddu_devicon";
 
@@ -34,7 +35,8 @@ function getPath(item: DduItem): string | undefined {
     "path" in item.action &&
     typeof item.action.path === "string"
   ) {
-    return item.action.path;
+    const fullpath = item.action.path;
+    return basename(fullpath);
   }
 }
 
