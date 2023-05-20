@@ -15,8 +15,8 @@ type Params = {
 };
 
 type IconData = {
-  icon: string;
-  hl_group: string;
+  icon: string | undefined;
+  hl_group: string | undefined;
 };
 
 const ENCODER = new TextEncoder();
