@@ -12,6 +12,7 @@ const HIGHLIGHT_NAME = "ddu_devicon";
 
 type Params = {
   padding: number;
+  defaultIcon: string;
 };
 
 type IconData = {
@@ -70,10 +71,10 @@ export class Filter extends BaseFilter<Params> {
         return item;
       }
 
-      const { icon, hl_group } = await getIconHl(denops, path);
+      const { icon = filterParams.defaultIcon, hl_group } = await getIconHl(denops, path);
 
       // vim-devicon support only icon.
-      if (icon && !display.startsWith(padding + icon)) {
+      if (!display.startsWith(padding + icon)) {
         item.display = `${padding}${icon} ${display}`;
 
         const col = filterParams.padding + 1;
@@ -102,6 +103,7 @@ export class Filter extends BaseFilter<Params> {
   params(): Params {
     return {
       padding: 0,
+      defaultIcon: "",
     };
   }
 }

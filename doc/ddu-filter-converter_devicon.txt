@@ -50,9 +50,15 @@ PARAMS					*ddu-filter-converter_devicon-params*
 
 				*ddu-filter-converter_devicon-param-padding*
 padding		(number)
-	Number of spaces to the left of the icon
+	Number of spaces to the left of the icon.
 
 	Default: 0
+
+				*ddu-filter-converter_devicon-param-defaultIcon*
+defaultIcon	(string)
+	Icon to fall back to when icon is not found from file name.
+
+	Default: 
 
 
 ==============================================================================
