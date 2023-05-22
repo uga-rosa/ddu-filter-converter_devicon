@@ -44,33 +44,35 @@ export class Filter extends BaseFilter<Params> {
       }
       const { word, display = word, highlights = [] } = item;
 
-      if (highlights.some((item) => item.name === HIGHLIGHT_NAME)) {
+      // Already added a devicon
+      if (
+        highlights.some((item) => item.name === HIGHLIGHT_NAME) ||
+        (display.startsWith(padding + filterParams.defaultIcon))
+      ) {
         return item;
       }
 
       const iconData = getIconData(path);
       const { icon = filterParams.defaultIcon, hl_group = "" } = iconData;
 
-      if (!display.startsWith(padding + icon)) {
-        item.display = `${padding}${icon} ${display}`;
+      item.display = `${padding}${icon} ${display}`;
 
-        const col = filterParams.padding + 1;
-        const width = byteLen(icon);
-        const offset = col + width;
+      const col = filterParams.padding + 1;
+      const width = byteLen(icon);
+      const offset = col + width;
 
-        highlights.forEach((hl) => hl.col += offset);
+      highlights.forEach((hl) => hl.col += offset);
 
-        if (hl_group) {
-          item.highlights = [
-            ...highlights,
-            {
-              name: HIGHLIGHT_NAME,
-              hl_group: hl_group,
-              col,
-              width,
-            },
-          ];
-        }
+      if (hl_group) {
+        item.highlights = [
+          ...highlights,
+          {
+            name: HIGHLIGHT_NAME,
+            hl_group: hl_group,
+            col,
+            width,
+          },
+        ];
       }
 
       return item;
