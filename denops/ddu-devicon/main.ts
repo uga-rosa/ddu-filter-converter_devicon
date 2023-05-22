@@ -23,16 +23,18 @@ function setupHighlights(denops: Denops) {
 }
 
 type IconData = {
-  icon: string;
-  hl_group: string;
+  icon?: string;
+  hl_group?: string;
 };
 
 export function getIconData(
   filename: string,
-): IconData | undefined {
+): IconData {
   const def = getDeviconDef(filename);
   if (def) {
     return { icon: def.icon, hl_group: getHighlightGroup(def) };
+  } else {
+    return {};
   }
 }
 

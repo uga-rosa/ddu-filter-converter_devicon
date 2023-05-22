@@ -49,8 +49,7 @@ export class Filter extends BaseFilter<Params> {
       }
 
       const iconData = getIconData(path);
-
-      const { icon = filterParams.defaultIcon, hl_group = "" } = iconData ?? {};
+      const { icon = filterParams.defaultIcon, hl_group = "" } = iconData;
 
       if (!display.startsWith(padding + icon)) {
         item.display = `${padding}${icon} ${display}`;
