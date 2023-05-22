@@ -68,7 +68,7 @@ export class Filter extends BaseFilter<Params> {
           ...highlights,
           {
             name: HIGHLIGHT_NAME,
-            hl_group: hl_group,
+            hl_group,
             col,
             width,
           },
