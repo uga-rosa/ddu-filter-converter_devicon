@@ -16,6 +16,8 @@ INTRODUCTION			*ddu-filter-converter_devicon-introduction*
 
 Add devicon to files
 
+You need to set 'termguicolors' to 1.
+
 
 ==============================================================================
 INSTALL					*ddu-filter-converter_devicon-install*
