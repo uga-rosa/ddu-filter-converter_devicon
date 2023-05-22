@@ -2,23 +2,14 @@ import {
   BaseFilter,
   DduItem,
 } from "https://deno.land/x/ddu_vim@v2.8.3/types.ts";
-import { Denops } from "https://deno.land/x/ddu_vim@v2.8.3/deps.ts";
-import {
-  assertArray,
-  isString,
-} from "https://deno.land/x/unknownutil@v2.1.1/mod.ts";
 import { basename } from "https://deno.land/std@0.188.0/path/win32.ts";
+import { getIconData } from "../ddu-devicon/main.ts";
 
 const HIGHLIGHT_NAME = "ddu_devicon";
 
 type Params = {
   padding: number;
   defaultIcon: string;
-};
-
-type IconData = {
-  icon: string | undefined;
-  hl_group: string | undefined;
 };
 
 const ENCODER = new TextEncoder();
@@ -39,45 +30,28 @@ function getPath(item: DduItem): string | undefined {
   }
 }
 
-async function getIconHl(
-  denops: Denops,
-  filename: string,
-): Promise<IconData> {
-  const retval = await denops.call(
-    "ddu#filter#converter#devicon#get_icon_hl",
-    filename,
-  );
-  assertArray(retval, isString);
-  const [icon, hl_group] = retval;
-  return { icon, hl_group };
-}
-
 export class Filter extends BaseFilter<Params> {
   filter(args: {
-    denops: Denops;
     filterParams: Params;
     items: DduItem[];
   }): Promise<DduItem[]> {
-    const { denops, filterParams, items } = args;
+    const { filterParams, items } = args;
     const padding = " ".repeat(filterParams.padding);
-    return Promise.all(items.map(async (item) => {
+    return Promise.resolve(items.map((item) => {
       const path = getPath(item);
       if (path === undefined) {
         return item;
       }
       const { word, display = word, highlights = [] } = item;
 
-      // Icon & highlight is already added (nvim-web-devicons)
       if (highlights.some((item) => item.name === HIGHLIGHT_NAME)) {
         return item;
       }
 
-      const {
-        icon = filterParams.defaultIcon,
-        hl_group,
-      } = await getIconHl(denops, path);
+      const iconData = getIconData(path);
 
-      // vim-devicon support only icon.
+      const { icon = filterParams.defaultIcon, hl_group = "" } = iconData ?? {};
+
       if (!display.startsWith(padding + icon)) {
         item.display = `${padding}${icon} ${display}`;
 
@@ -92,7 +66,7 @@ export class Filter extends BaseFilter<Params> {
             ...highlights,
             {
               name: HIGHLIGHT_NAME,
-              hl_group,
+              hl_group: hl_group,
               col,
               width,
             },
