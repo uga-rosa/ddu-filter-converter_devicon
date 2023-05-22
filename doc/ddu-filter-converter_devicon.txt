@@ -25,11 +25,6 @@ Please install "ddu.vim" and "denops.vim".
 https://github.com/Shougo/ddu.vim
 https://github.com/vim-denops/denops.vim
 
-Either devicon plugin is required.
-
-https://github.com/nvim-tree/nvim-web-devicons (icon and highlight)
-https://github.com/ryanoasis/vim-devicons (only icon)
-
 
 ==============================================================================
 EXAMPLES				*ddu-filter-converter_devicon-examples*
