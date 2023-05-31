@@ -2,7 +2,7 @@ import {
   BaseFilter,
   DduItem,
 } from "https://deno.land/x/ddu_vim@v2.8.3/types.ts";
-import { basename } from "https://deno.land/std@0.188.0/path/win32.ts";
+import { basename } from "https://deno.land/std@0.188.0/path/mod.ts";
 import { getIconData } from "../ddu-devicon/main.ts";
 
 const HIGHLIGHT_NAME = "ddu_devicon";
