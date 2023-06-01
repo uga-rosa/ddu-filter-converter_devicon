@@ -32,7 +32,7 @@ export type DeviconDef = {
   name: string;
 };
 
-export const iconFilename: Record<string, DeviconDef> = {
+export const IconFilename: Record<string, DeviconDef> = {
   ".babelrc": {
     icon: "",
     color: "#cbcb41",
@@ -285,7 +285,7 @@ export const iconFilename: Record<string, DeviconDef> = {
   },
 } as const satisfies Record<string, DeviconDef>;
 
-export const iconFileExtension: Record<string, DeviconDef> = {
+export const IconFileExtension: Record<string, DeviconDef> = {
   "ai": {
     icon: "",
     color: "#cbcb41",

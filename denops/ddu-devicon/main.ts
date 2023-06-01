@@ -2,8 +2,8 @@ import { Denops } from "https://deno.land/x/denops_std@v4.3.3/mod.ts";
 import {
   DeviconDef,
   getDeviconDef,
-  iconFileExtension,
-  iconFilename,
+  IconFileExtension,
+  IconFilename,
 } from "./def.ts";
 
 function getHighlightGroup(def: DeviconDef) {
@@ -33,7 +33,7 @@ export function getIconData(
 
 export function main(denops: Denops) {
   Promise.all(
-    [...Object.values(iconFilename), ...Object.values(iconFileExtension)]
+    [...Object.values(IconFilename), ...Object.values(IconFileExtension)]
       .map((def) => setupHighlight(denops, def)),
   );
 }
