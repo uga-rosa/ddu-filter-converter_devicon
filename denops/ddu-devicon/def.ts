@@ -33,1335 +33,1335 @@ export type DeviconDef = {
 };
 
 export const iconFilename: Record<string, DeviconDef> = {
-  [".babelrc"]: {
+  ".babelrc": {
     icon: "",
     color: "#cbcb41",
     name: "Babelrc",
   },
-  [".bash_profile"]: {
+  ".bash_profile": {
     icon: "",
     color: "#89e051",
     name: "BashProfile",
   },
-  [".bashrc"]: {
+  ".bashrc": {
     icon: "",
     color: "#89e051",
     name: "Bashrc",
   },
-  [".ds_store"]: {
+  ".ds_store": {
     icon: "",
     color: "#41535b",
     name: "DsStore",
   },
-  [".eslintrc"]: {
+  ".eslintrc": {
     icon: "",
     color: "#4b32c3",
     name: "Eslintrc",
   },
-  [".gitattributes"]: {
+  ".gitattributes": {
     icon: "",
     color: "#41535b",
     name: "GitAttributes",
   },
-  [".gitconfig"]: {
+  ".gitconfig": {
     icon: "",
     color: "#41535b",
     name: "GitConfig",
   },
-  [".gitignore"]: {
+  ".gitignore": {
     icon: "",
     color: "#41535b",
     name: "GitIgnore",
   },
-  [".gitlab-ci.yml"]: {
+  ".gitlab-ci.yml": {
     icon: "",
     color: "#e24329",
     name: "GitlabCI",
   },
-  [".gitmodules"]: {
+  ".gitmodules": {
     icon: "",
     color: "#41535b",
     name: "GitModules",
   },
-  [".gvimrc"]: {
+  ".gvimrc": {
     icon: "",
     color: "#019833",
     name: "Gvimrc",
   },
-  [".npmignore"]: {
+  ".npmignore": {
     icon: "",
     color: "#E8274B",
     name: "NPMIgnore",
   },
-  [".npmrc"]: {
+  ".npmrc": {
     icon: "",
     color: "#E8274B",
     name: "NPMrc",
   },
-  [".settings.json"]: {
+  ".settings.json": {
     icon: "",
     color: "#854CC7",
     name: "SettingsJson",
   },
-  [".vimrc"]: {
+  ".vimrc": {
     icon: "",
     color: "#019833",
     name: "Vimrc",
   },
-  [".zprofile"]: {
+  ".zprofile": {
     icon: "",
     color: "#89e051",
     name: "Zshprofile",
   },
-  [".zshenv"]: {
+  ".zshenv": {
     icon: "",
     color: "#89e051",
     name: "Zshenv",
   },
-  [".zshrc"]: {
+  ".zshrc": {
     icon: "",
     color: "#89e051",
     name: "Zshrc",
   },
-  ["brewfile"]: {
+  "brewfile": {
     icon: "",
     color: "#701516",
     name: "Brewfile",
   },
-  ["cmakelists.txt"]: {
+  "cmakelists.txt": {
     icon: "",
     color: "#6d8086",
     name: "CMakeLists",
   },
-  ["commit_editmsg"]: {
+  "commit_editmsg": {
     icon: "",
     color: "#41535b",
     name: "GitCommit",
   },
-  ["containerfile"]: {
+  "containerfile": {
     icon: "󰡨",
     color: "#458ee6",
     name: "Dockerfile",
   },
-  ["copying"]: {
+  "copying": {
     icon: "",
     color: "#cbcb41",
     name: "License",
   },
-  ["copying.lesser"]: {
+  "copying.lesser": {
     icon: "",
     color: "#cbcb41",
     name: "License",
   },
-  ["docker-compose.yml"]: {
+  "docker-compose.yml": {
     icon: "󰡨",
     color: "#458ee6",
     name: "Dockerfile",
   },
-  ["docker-compose.yaml"]: {
+  "docker-compose.yaml": {
     icon: "󰡨",
     color: "#458ee6",
     name: "Dockerfile",
   },
-  [".dockerignore"]: {
+  ".dockerignore": {
     icon: "󰡨",
     color: "#458ee6",
     name: "Dockerfile",
   },
-  ["gemfile$"]: {
+  "gemfile$": {
     icon: "",
     color: "#701516",
     name: "Gemfile",
   },
-  ["license"]: {
+  "license": {
     icon: "",
     color: "#d0bf41",
     name: "License",
   },
-  ["r"]: {
+  "r": {
     icon: "󰟔",
     color: "#358a5b",
     name: "R",
   },
-  ["rmd"]: {
+  "rmd": {
     icon: "",
     color: "#519aba",
     name: "Rmd",
   },
-  ["vagrantfile$"]: {
+  "vagrantfile$": {
     icon: "",
     color: "#1563FF",
     name: "Vagrantfile",
   },
-  ["_gvimrc"]: {
+  "_gvimrc": {
     icon: "",
     color: "#019833",
     name: "Gvimrc",
   },
-  ["_vimrc"]: {
+  "_vimrc": {
     icon: "",
     color: "#019833",
     name: "Vimrc",
   },
-  ["package.json"]: {
+  "package.json": {
     icon: "",
     color: "#e8274b",
     name: "PackageJson",
   },
-  ["package-lock.json"]: {
+  "package-lock.json": {
     icon: "",
     color: "#7a0d21",
     name: "PackageLockJson",
   },
-  ["node_modules"]: {
+  "node_modules": {
     icon: "",
     color: "#E8274B",
     name: "NodeModules",
   },
-  ["favicon.ico"]: {
+  "favicon.ico": {
     icon: "",
     color: "#cbcb41",
     name: "Favicon",
   },
-  ["gnumakefile"]: {
+  "gnumakefile": {
     icon: "",
     color: "#6d8086",
     name: "Makefile",
   },
-  ["makefile"]: {
+  "makefile": {
     icon: "",
     color: "#6d8086",
     name: "Makefile",
   },
-  ["mix.lock"]: {
+  "mix.lock": {
     icon: "",
     color: "#a074c4",
     name: "MixLock",
   },
-  [".env"]: {
+  ".env": {
     icon: "",
     color: "#faf743",
     name: "Env",
   },
-  ["gruntfile"]: {
+  "gruntfile": {
     icon: "",
     color: "#e37933",
     name: "Gruntfile",
   },
-  ["gulpfile"]: {
+  "gulpfile": {
     icon: "",
     color: "#cc3e44",
     name: "Gulpfile",
   },
-  ["webpack"]: {
+  "webpack": {
     icon: "󰜫",
     color: "#519aba",
     name: "Webpack",
   },
-  ["rakefile"]: {
+  "rakefile": {
     icon: "",
     color: "#701516",
     name: "Rakefile",
   },
-  ["procfile"]: {
+  "procfile": {
     icon: "",
     color: "#a074c4",
     name: "Procfile",
   },
-  ["dockerfile"]: {
+  "dockerfile": {
     icon: "󰡨",
     color: "#458ee6",
     name: "Dockerfile",
   },
-  ["build"]: {
+  "build": {
     icon: "",
     color: "#89e051",
     name: "BazelBuild",
   },
-  ["workspace"]: {
+  "workspace": {
     icon: "",
     color: "#89e051",
     name: "BazelWorkspace",
   },
-};
+} as const satisfies Record<string, DeviconDef>;
 
 export const iconFileExtension: Record<string, DeviconDef> = {
-  ["ai"]: {
+  "ai": {
     icon: "",
     color: "#cbcb41",
     name: "Ai",
   },
-  ["awk"]: {
+  "awk": {
     icon: "",
     color: "#4d5a5e",
     name: "Awk",
   },
-  ["bash"]: {
+  "bash": {
     icon: "",
     color: "#89e051",
     name: "Bash",
   },
-  ["bat"]: {
+  "bat": {
     icon: "",
     color: "#C1F12E",
     name: "Bat",
   },
-  ["bazel"]: {
+  "bazel": {
     icon: "",
     color: "#89e051",
     name: "Bazel",
   },
-  ["bzl"]: {
+  "bzl": {
     icon: "",
     color: "#89e051",
     name: "Bzl",
   },
-  ["bmp"]: {
+  "bmp": {
     icon: "",
     color: "#a074c4",
     name: "Bmp",
   },
-  ["c"]: {
+  "c": {
     icon: "",
     color: "#599eff",
     name: "C",
   },
-  ["c++"]: {
+  "c++": {
     icon: "",
     color: "#f34b7d",
     name: "CPlusPlus",
   },
-  ["cbl"]: {
+  "cbl": {
     icon: "⚙",
     color: "#005ca5",
     name: "Cobol",
   },
-  ["cc"]: {
+  "cc": {
     icon: "",
     color: "#f34b7d",
     name: "CPlusPlus",
   },
-  ["cfg"]: {
+  "cfg": {
     icon: "",
     color: "#ECECEC",
     name: "Configuration",
   },
-  ["cjs"]: {
+  "cjs": {
     icon: "",
     color: "#cbcb41",
     name: "Cjs",
   },
-  ["clj"]: {
+  "clj": {
     icon: "",
     color: "#8dc149",
     name: "Clojure",
   },
-  ["cljc"]: {
+  "cljc": {
     icon: "",
     color: "#8dc149",
     name: "ClojureC",
   },
-  ["cljs"]: {
+  "cljs": {
     icon: "",
     color: "#519aba",
     name: "ClojureJS",
   },
-  ["cljd"]: {
+  "cljd": {
     icon: "",
     color: "#519aba",
     name: "ClojureDart",
   },
-  ["cmake"]: {
+  "cmake": {
     icon: "",
     color: "#6d8086",
     name: "CMake",
   },
-  ["cob"]: {
+  "cob": {
     icon: "⚙",
     color: "#005ca5",
     name: "Cobol",
   },
-  ["cobol"]: {
+  "cobol": {
     icon: "⚙",
     color: "#005ca5",
     name: "Cobol",
   },
-  ["coffee"]: {
+  "coffee": {
     icon: "",
     color: "#cbcb41",
     name: "Coffee",
   },
-  ["conf"]: {
+  "conf": {
     icon: "",
     color: "#6d8086",
     name: "Conf",
   },
-  ["config.ru"]: {
+  "config.ru": {
     icon: "",
     color: "#701516",
     name: "ConfigRu",
   },
-  ["cp"]: {
+  "cp": {
     icon: "",
     color: "#519aba",
     name: "Cp",
   },
-  ["cpp"]: {
+  "cpp": {
     icon: "",
     color: "#519aba",
     name: "Cpp",
   },
-  ["cpy"]: {
+  "cpy": {
     icon: "⚙",
     color: "#005ca5",
     name: "Cobol",
   },
-  ["cr"]: {
+  "cr": {
     icon: "",
     color: "#c8c8c8",
     name: "Crystal",
   },
-  ["cs"]: {
+  "cs": {
     icon: "󰌛",
     color: "#596706",
     name: "Cs",
   },
-  ["csh"]: {
+  "csh": {
     icon: "",
     color: "#4d5a5e",
     name: "Csh",
   },
-  ["cson"]: {
+  "cson": {
     icon: "",
     color: "#cbcb41",
     name: "Cson",
   },
-  ["css"]: {
+  "css": {
     icon: "",
     color: "#42a5f5",
     name: "Css",
   },
-  ["csv"]: {
+  "csv": {
     icon: "󰈙",
     color: "#89e051",
     name: "Csv",
   },
-  ["cxx"]: {
+  "cxx": {
     icon: "",
     color: "#519aba",
     name: "Cxx",
   },
-  ["d"]: {
+  "d": {
     icon: "",
     color: "#427819",
     name: "D",
   },
-  ["dart"]: {
+  "dart": {
     icon: "",
     color: "#03589C",
     name: "Dart",
   },
-  ["db"]: {
+  "db": {
     icon: "",
     color: "#dad8d8",
     name: "Db",
   },
-  ["desktop"]: {
+  "desktop": {
     icon: "",
     color: "#563d7c",
     name: "DesktopEntry",
   },
-  ["diff"]: {
+  "diff": {
     icon: "",
     color: "#41535b",
     name: "Diff",
   },
-  ["doc"]: {
+  "doc": {
     icon: "󰈬",
     color: "#185abd",
     name: "Doc",
   },
-  ["docx"]: {
+  "docx": {
     icon: "󰈬",
     color: "#185abd",
     name: "Docx",
   },
-  ["drl"]: {
+  "drl": {
     icon: "",
     color: "#ffafaf",
     name: "Drools",
   },
-  ["dropbox"]: {
+  "dropbox": {
     icon: "",
     color: "#0061FE",
     name: "Dropbox",
   },
-  ["dump"]: {
+  "dump": {
     icon: "",
     color: "#dad8d8",
     name: "Dump",
   },
-  ["edn"]: {
+  "edn": {
     icon: "",
     color: "#519aba",
     name: "Edn",
   },
-  ["eex"]: {
+  "eex": {
     icon: "",
     color: "#a074c4",
     name: "Eex",
   },
-  ["ejs"]: {
+  "ejs": {
     icon: "",
     color: "#cbcb41",
     name: "Ejs",
   },
-  ["elm"]: {
+  "elm": {
     icon: "",
     color: "#519aba",
     name: "Elm",
   },
-  ["epp"]: {
+  "epp": {
     icon: "",
     color: "#FFA61A",
     name: "Epp",
   },
-  ["erb"]: {
+  "erb": {
     icon: "",
     color: "#701516",
     name: "Erb",
   },
-  ["erl"]: {
+  "erl": {
     icon: "",
     color: "#B83998",
     name: "Erl",
   },
-  ["ex"]: {
+  "ex": {
     icon: "",
     color: "#a074c4",
     name: "Ex",
   },
-  ["exs"]: {
+  "exs": {
     icon: "",
     color: "#a074c4",
     name: "Exs",
   },
-  ["f#"]: {
+  "f#": {
     icon: "",
     color: "#519aba",
     name: "Fsharp",
   },
-  ["f90"]: {
+  "f90": {
     icon: "󱈚",
     color: "#734f96",
     name: "Fortran",
   },
-  ["fnl"]: {
+  "fnl": {
     color: "#fff3d7",
     icon: "🌜",
     name: "Fennel",
   },
-  ["fish"]: {
+  "fish": {
     icon: "",
     color: "#4d5a5e",
     name: "Fish",
   },
-  ["fs"]: {
+  "fs": {
     icon: "",
     color: "#519aba",
     name: "Fs",
   },
-  ["fsi"]: {
+  "fsi": {
     icon: "",
     color: "#519aba",
     name: "Fsi",
   },
-  ["fsscript"]: {
+  "fsscript": {
     icon: "",
     color: "#519aba",
     name: "Fsscript",
   },
-  ["fsx"]: {
+  "fsx": {
     icon: "",
     color: "#519aba",
     name: "Fsx",
   },
-  ["gd"]: {
+  "gd": {
     icon: "",
     color: "#6d8086",
     name: "GDScript",
   },
-  ["gemspec"]: {
+  "gemspec": {
     icon: "",
     color: "#701516",
     name: "Gemspec",
   },
-  ["gif"]: {
+  "gif": {
     icon: "",
     color: "#a074c4",
     name: "Gif",
   },
-  ["git"]: {
+  "git": {
     icon: "",
     color: "#F14C28",
     name: "GitLogo",
   },
-  ["glb"]: {
+  "glb": {
     icon: "",
     color: "#FFB13B",
     name: "BinaryGLTF",
   },
-  ["go"]: {
+  "go": {
     icon: "",
     color: "#519aba",
     name: "Go",
   },
-  ["godot"]: {
+  "godot": {
     icon: "",
     color: "#6d8086",
     name: "GodotProject",
   },
-  ["graphql"]: {
+  "graphql": {
     icon: "",
     color: "#e535ab",
     name: "GraphQL",
   },
-  ["gql"]: {
+  "gql": {
     icon: "",
     color: "#e535ab",
     name: "GraphQL",
   },
-  ["h"]: {
+  "h": {
     icon: "",
     color: "#a074c4",
     name: "H",
   },
-  ["haml"]: {
+  "haml": {
     icon: "",
     color: "#eaeae1",
     name: "Haml",
   },
-  ["hbs"]: {
+  "hbs": {
     icon: "",
     color: "#f0772b",
     name: "Hbs",
   },
-  ["heex"]: {
+  "heex": {
     icon: "",
     color: "#a074c4",
     name: "Heex",
   },
-  ["hh"]: {
+  "hh": {
     icon: "",
     color: "#a074c4",
     name: "Hh",
   },
-  ["hpp"]: {
+  "hpp": {
     icon: "",
     color: "#a074c4",
     name: "Hpp",
   },
-  ["hrl"]: {
+  "hrl": {
     icon: "",
     color: "#B83998",
     name: "Hrl",
   },
-  ["hs"]: {
+  "hs": {
     icon: "",
     color: "#a074c4",
     name: "Hs",
   },
-  ["htm"]: {
+  "htm": {
     icon: "",
     color: "#e34c26",
     name: "Htm",
   },
-  ["html"]: {
+  "html": {
     icon: "",
     color: "#e44d26",
     name: "Html",
   },
-  ["hxx"]: {
+  "hxx": {
     icon: "",
     color: "#a074c4",
     name: "Hxx",
   },
-  ["ico"]: {
+  "ico": {
     icon: "",
     color: "#cbcb41",
     name: "Ico",
   },
-  ["import"]: {
+  "import": {
     icon: "",
     color: "#ECECEC",
     name: "ImportConfiguration",
   },
-  ["ini"]: {
+  "ini": {
     icon: "",
     color: "#6d8086",
     name: "Ini",
   },
-  ["java"]: {
+  "java": {
     icon: "",
     color: "#cc3e44",
     name: "Java",
   },
-  ["jl"]: {
+  "jl": {
     icon: "",
     color: "#a270ba",
     name: "Jl",
   },
-  ["jpeg"]: {
+  "jpeg": {
     icon: "",
     color: "#a074c4",
     name: "Jpeg",
   },
-  ["jpg"]: {
+  "jpg": {
     icon: "",
     color: "#a074c4",
     name: "Jpg",
   },
-  ["js"]: {
+  "js": {
     icon: "",
     color: "#cbcb41",
     name: "Js",
   },
-  ["test.js"]: {
+  "test.js": {
     icon: "",
     color: "#cbcb41",
     name: "TestJs",
   },
-  ["spec.js"]: {
+  "spec.js": {
     icon: "",
     color: "#cbcb41",
     name: "SpecJs",
   },
-  ["json"]: {
+  "json": {
     icon: "",
     color: "#cbcb41",
     name: "Json",
   },
-  ["json5"]: {
+  "json5": {
     icon: "",
     color: "#cbcb41",
     name: "Json5",
   },
-  ["jsx"]: {
+  "jsx": {
     icon: "",
     color: "#20c2e3",
     name: "Jsx",
   },
-  ["test.jsx"]: {
+  "test.jsx": {
     icon: "",
     color: "#20c2e3",
     name: "JavaScriptReactTest",
   },
-  ["spec.jsx"]: {
+  "spec.jsx": {
     icon: "",
     color: "#20c2e3",
     name: "JavaScriptReactSpec",
   },
-  ["ksh"]: {
+  "ksh": {
     icon: "",
     color: "#4d5a5e",
     name: "Ksh",
   },
-  ["kt"]: {
+  "kt": {
     icon: "",
     color: "#7F52FF",
     name: "Kotlin",
   },
-  ["kts"]: {
+  "kts": {
     icon: "",
     color: "#7F52FF",
     name: "KotlinScript",
   },
-  ["leex"]: {
+  "leex": {
     icon: "",
     color: "#a074c4",
     name: "Leex",
   },
-  ["less"]: {
+  "less": {
     icon: "",
     color: "#563d7c",
     name: "Less",
   },
-  ["lhs"]: {
+  "lhs": {
     icon: "",
     color: "#a074c4",
     name: "Lhs",
   },
-  ["license"]: {
+  "license": {
     icon: "",
     color: "#cbcb41",
     name: "License",
   },
-  ["lua"]: {
+  "lua": {
     icon: "",
     color: "#51a0cf",
     name: "Lua",
   },
-  ["luau"]: {
+  "luau": {
     icon: "",
     color: "#51a0cf",
     name: "Luau",
   },
-  ["gnumakefile"]: {
+  "gnumakefile": {
     icon: "",
     color: "#6d8086",
     name: "Makefile",
   },
-  ["makefile"]: {
+  "makefile": {
     icon: "",
     color: "#6d8086",
     name: "Makefile",
   },
-  ["mk"]: {
+  "mk": {
     icon: "",
     color: "#6d8086",
     name: "Makefile",
   },
-  ["markdown"]: {
+  "markdown": {
     icon: "",
     color: "#519aba",
     name: "Markdown",
   },
-  ["material"]: {
+  "material": {
     icon: "󰔉",
     color: "#B83998",
     name: "Material",
   },
-  ["md"]: {
+  "md": {
     icon: "",
     color: "#ffffff",
     name: "Md",
   },
-  ["mdx"]: {
+  "mdx": {
     icon: "",
     color: "#519aba",
     name: "Mdx",
   },
-  ["mint"]: {
+  "mint": {
     icon: "󰌪",
     color: "#87c095",
     name: "Mint",
   },
-  ["mjs"]: {
+  "mjs": {
     icon: "",
     color: "#f1e05a",
     name: "Mjs",
   },
-  ["ml"]: {
+  "ml": {
     icon: "λ",
     color: "#e37933",
     name: "Ml",
   },
-  ["mli"]: {
+  "mli": {
     icon: "λ",
     color: "#e37933",
     name: "Mli",
   },
-  ["mo"]: {
+  "mo": {
     icon: "∞",
     color: "#9772FB",
     name: "Motoko",
   },
-  ["mustache"]: {
+  "mustache": {
     icon: "",
     color: "#e37933",
     name: "Mustache",
   },
-  ["nim"]: {
+  "nim": {
     icon: "",
     color: "#f3d400",
     name: "Nim",
   },
-  ["nix"]: {
+  "nix": {
     icon: "",
     color: "#7ebae4",
     name: "Nix",
   },
-  ["opus"]: {
+  "opus": {
     icon: "󰈣",
     color: "#F88A02",
     name: "OPUS",
   },
-  ["org"]: {
+  "org": {
     icon: "",
     color: "#77AA99",
     name: "OrgMode",
   },
-  ["otf"]: {
+  "otf": {
     icon: "",
     color: "#ECECEC",
     name: "OpenTypeFont",
   },
-  ["pck"]: {
+  "pck": {
     icon: "",
     color: "#6d8086",
     name: "PackedResource",
   },
-  ["pdf"]: {
+  "pdf": {
     icon: "",
     color: "#b30b00",
     name: "Pdf",
   },
-  ["php"]: {
+  "php": {
     icon: "",
     color: "#a074c4",
     name: "Php",
   },
-  ["pl"]: {
+  "pl": {
     icon: "",
     color: "#519aba",
     name: "Pl",
   },
-  ["pm"]: {
+  "pm": {
     icon: "",
     color: "#519aba",
     name: "Pm",
   },
-  ["png"]: {
+  "png": {
     icon: "",
     color: "#a074c4",
     name: "Png",
   },
-  ["pp"]: {
+  "pp": {
     icon: "",
     color: "#FFA61A",
     name: "Pp",
   },
-  ["ppt"]: {
+  "ppt": {
     icon: "󰈧",
     color: "#cb4a32",
     name: "Ppt",
   },
-  ["pro"]: {
+  "pro": {
     icon: "",
     color: "#e4b854",
     name: "Prolog",
   },
-  ["ps1"]: {
+  "ps1": {
     icon: "󰨊",
     color: "#4273ca",
     name: "PsScriptfile",
   },
-  ["psd1"]: {
+  "psd1": {
     icon: "󰨊",
     color: "#6975c4",
     name: "PsManifestfile",
   },
-  ["psm1"]: {
+  "psm1": {
     icon: "󰨊",
     color: "#6975c4",
     name: "PsScriptModulefile",
   },
-  ["psb"]: {
+  "psb": {
     icon: "",
     color: "#519aba",
     name: "Psb",
   },
-  ["psd"]: {
+  "psd": {
     icon: "",
     color: "#519aba",
     name: "Psd",
   },
-  ["py"]: {
+  "py": {
     icon: "",
     color: "#ffbc03",
     name: "Py",
   },
-  ["pyc"]: {
+  "pyc": {
     icon: "",
     color: "#ffe291",
     name: "Pyc",
   },
-  ["pyd"]: {
+  "pyd": {
     icon: "",
     color: "#ffe291",
     name: "Pyd",
   },
-  ["pyo"]: {
+  "pyo": {
     icon: "",
     color: "#ffe291",
     name: "Pyo",
   },
-  ["query"]: {
+  "query": {
     icon: "",
     color: "#90a850",
     name: "Query",
   },
-  ["r"]: {
+  "r": {
     icon: "󰟔",
     color: "#358a5b",
     name: "R",
   },
-  ["rake"]: {
+  "rake": {
     icon: "",
     color: "#701516",
     name: "Rake",
   },
-  ["rb"]: {
+  "rb": {
     icon: "",
     color: "#701516",
     name: "Rb",
   },
-  ["res"]: {
+  "res": {
     icon: "",
     color: "#cc3e44",
     name: "ReScript",
   },
-  ["resi"]: {
+  "resi": {
     icon: "",
     color: "#f55385",
     name: "ReScriptInterface",
   },
-  ["rlib"]: {
+  "rlib": {
     icon: "",
     color: "#dea584",
     name: "Rlib",
   },
-  ["rmd"]: {
+  "rmd": {
     icon: "",
     color: "#519aba",
     name: "Rmd",
   },
-  ["rproj"]: {
+  "rproj": {
     icon: "󰗆",
     color: "#358a5b",
     name: "Rproj",
   },
-  ["rs"]: {
+  "rs": {
     icon: "",
     color: "#dea584",
     name: "Rs",
   },
-  ["rss"]: {
+  "rss": {
     icon: "",
     color: "#FB9D3B",
     name: "Rss",
   },
-  ["sass"]: {
+  "sass": {
     icon: "",
     color: "#f55385",
     name: "Sass",
   },
-  ["sbt"]: {
+  "sbt": {
     icon: "",
     color: "#cc3e44",
     name: "sbt",
   },
-  ["scala"]: {
+  "scala": {
     icon: "",
     color: "#cc3e44",
     name: "Scala",
   },
-  ["scm"]: {
+  "scm": {
     icon: "󰘧",
     color: "#000000",
     name: "Scheme",
   },
-  ["scss"]: {
+  "scss": {
     icon: "",
     color: "#f55385",
     name: "Scss",
   },
-  ["sh"]: {
+  "sh": {
     icon: "",
     color: "#4d5a5e",
     name: "Sh",
   },
-  ["sig"]: {
+  "sig": {
     icon: "λ",
     color: "#e37933",
     name: "Sig",
   },
-  ["slim"]: {
+  "slim": {
     icon: "",
     color: "#e34c26",
     name: "Slim",
   },
-  ["sln"]: {
+  "sln": {
     icon: "",
     color: "#854CC7",
     name: "Sln",
   },
-  ["sml"]: {
+  "sml": {
     icon: "λ",
     color: "#e37933",
     name: "Sml",
   },
-  ["sql"]: {
+  "sql": {
     icon: "",
     color: "#dad8d8",
     name: "Sql",
   },
-  ["sqlite"]: {
+  "sqlite": {
     icon: "",
     color: "#dad8d8",
     name: "Sql",
   },
-  ["sqlite3"]: {
+  "sqlite3": {
     icon: "",
     color: "#dad8d8",
     name: "Sql",
   },
-  ["styl"]: {
+  "styl": {
     icon: "",
     color: "#8dc149",
     name: "Styl",
   },
-  ["sublime"]: {
+  "sublime": {
     icon: "",
     color: "#e37933",
     name: "Suo",
   },
-  ["suo"]: {
+  "suo": {
     icon: "",
     color: "#854CC7",
     name: "Suo",
   },
-  ["sv"]: {
+  "sv": {
     icon: "󰍛",
     color: "#019833",
     name: "SystemVerilog",
   },
-  ["svelte"]: {
+  "svelte": {
     icon: "",
     color: "#ff3e00",
     name: "Svelte",
   },
-  ["svh"]: {
+  "svh": {
     icon: "󰍛",
     color: "#019833",
     name: "SystemVerilog",
   },
-  ["svg"]: {
+  "svg": {
     icon: "󰜡",
     color: "#FFB13B",
     name: "Svg",
   },
-  ["swift"]: {
+  "swift": {
     icon: "",
     color: "#e37933",
     name: "Swift",
   },
-  ["t"]: {
+  "t": {
     icon: "",
     color: "#519aba",
     name: "Tor",
   },
-  ["tbc"]: {
+  "tbc": {
     icon: "󰛓",
     color: "#1e5cb3",
     name: "Tcl",
   },
-  ["tcl"]: {
+  "tcl": {
     icon: "󰛓",
     color: "#1e5cb3",
     name: "Tcl",
   },
-  ["terminal"]: {
+  "terminal": {
     icon: "",
     color: "#31B53E",
     name: "Terminal",
   },
-  ["tex"]: {
+  "tex": {
     icon: "󰙩",
     color: "#3D6117",
     name: "Tex",
   },
-  ["tf"]: {
+  "tf": {
     icon: "",
     color: "#5F43E9",
     name: "Terraform",
   },
-  ["tfvars"]: {
+  "tfvars": {
     icon: "",
     color: "#5F43E9",
     name: "TFVars",
   },
-  ["toml"]: {
+  "toml": {
     icon: "",
     color: "#6d8086",
     name: "Toml",
   },
-  ["tres"]: {
+  "tres": {
     icon: "",
     color: "#cbcb41",
     name: "TextResource",
   },
-  ["ts"]: {
+  "ts": {
     icon: "",
     color: "#519aba",
     name: "Ts",
   },
-  ["test.ts"]: {
+  "test.ts": {
     icon: "",
     color: "#519aba",
     name: "TestTs",
   },
-  ["spec.ts"]: {
+  "spec.ts": {
     icon: "",
     color: "#519aba",
     name: "SpecTs",
   },
-  ["tscn"]: {
+  "tscn": {
     icon: "󰎁",
     color: "#a074c4",
     name: "TextScene",
   },
-  ["tsx"]: {
+  "tsx": {
     icon: "",
     color: "#1354bf",
     name: "Tsx",
   },
-  ["test.tsx"]: {
+  "test.tsx": {
     icon: "",
     color: "#1354bf",
     name: "TypeScriptReactTest",
   },
-  ["spec.tsx"]: {
+  "spec.tsx": {
     icon: "",
     color: "#1354bf",
     name: "TypeScriptReactSpec",
   },
-  ["twig"]: {
+  "twig": {
     icon: "",
     color: "#8dc149",
     name: "Twig",
   },
-  ["txt"]: {
+  "txt": {
     icon: "󰈙",
     color: "#89e051",
     name: "Txt",
   },
-  ["v"]: {
+  "v": {
     icon: "󰍛",
     color: "#019833",
     name: "Verilog",
   },
-  ["vala"]: {
+  "vala": {
     icon: "",
     color: "#7239b3",
     name: "Vala",
   },
-  ["vh"]: {
+  "vh": {
     icon: "󰍛",
     color: "#019833",
     name: "Verilog",
   },
-  ["vhd"]: {
+  "vhd": {
     icon: "󰍛",
     color: "#019833",
     name: "VHDL",
   },
-  ["vhdl"]: {
+  "vhdl": {
     icon: "󰍛",
     color: "#019833",
     name: "VHDL",
   },
-  ["vim"]: {
+  "vim": {
     icon: "",
     color: "#019833",
     name: "Vim",
   },
-  ["vue"]: {
+  "vue": {
     icon: "",
     color: "#8dc149",
     name: "Vue",
   },
-  ["webmanifest"]: {
+  "webmanifest": {
     icon: "",
     color: "#f1e05a",
     name: "Webmanifest",
   },
-  ["webp"]: {
+  "webp": {
     icon: "",
     color: "#a074c4",
     name: "Webp",
   },
-  ["webpack"]: {
+  "webpack": {
     icon: "󰜫",
     color: "#519aba",
     name: "Webpack",
   },
-  ["xcplayground"]: {
+  "xcplayground": {
     icon: "",
     color: "#e37933",
     name: "XcPlayground",
   },
-  ["xls"]: {
+  "xls": {
     icon: "󰈛",
     color: "#207245",
     name: "Xls",
   },
-  ["xlsx"]: {
+  "xlsx": {
     icon: "󰈛",
     color: "#207245",
     name: "Xlsx",
   },
-  ["xml"]: {
+  "xml": {
     icon: "󰗀",
     color: "#e37933",
     name: "Xml",
   },
-  ["xul"]: {
+  "xul": {
     icon: "",
     color: "#e37933",
     name: "Xul",
   },
-  ["yaml"]: {
+  "yaml": {
     icon: "",
     color: "#6d8086",
     name: "Yaml",
   },
-  ["yml"]: {
+  "yml": {
     icon: "",
     color: "#6d8086",
     name: "Yml",
   },
-  ["zig"]: {
+  "zig": {
     icon: "",
     color: "#f69a1b",
     name: "Zig",
   },
-  ["zsh"]: {
+  "zsh": {
     icon: "",
     color: "#89e051",
     name: "Zsh",
   },
-  ["sol"]: {
+  "sol": {
     icon: "󰞻",
     color: "#519aba",
     name: "Solidity",
   },
-  ["prisma"]: {
+  "prisma": {
     icon: "󰔶",
     color: "#ffffff",
     name: "Prisma",
   },
-  ["lock"]: {
+  "lock": {
     icon: "",
     color: "#bbbbbb",
     name: "Lock",
   },
-  ["log"]: {
+  "log": {
     icon: "󰌱",
     color: "#ffffff",
     name: "Log",
   },
-  ["wasm"]: {
+  "wasm": {
     icon: "",
     color: "#5c4cdb",
     name: "Wasm",
   },
-  ["liquid"]: {
+  "liquid": {
     icon: "",
     color: "#95BF47",
     name: "Liquid",
   },
-};
+} as const satisfies Record<string, DeviconDef>;
 
 export function getDeviconDef(filename: string): DeviconDef | undefined {
   filename = filename.toLowerCase();
