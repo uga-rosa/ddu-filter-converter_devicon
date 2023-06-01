@@ -1363,11 +1363,23 @@ export const IconFileExtension: Record<string, DeviconDef> = {
   },
 } as const satisfies Record<string, DeviconDef>;
 
-export function getDeviconDef(filename: string): DeviconDef | undefined {
+export const IconFolder = {
+  icon: "",
+  color: "#7ebae4",
+  name: "Folder",
+} as const satisfies DeviconDef;
+
+export function getDeviconDef(
+  filename: string,
+  isFolder?: boolean,
+): DeviconDef | undefined {
+  if (isFolder) {
+    return IconFolder;
+  }
   filename = filename.toLowerCase();
-  if (iconFilename[filename]) {
-    return iconFilename[filename];
+  if (IconFilename[filename]) {
+    return IconFilename[filename];
   }
   const ext = filename.replace(/(.*)\./, "");
-  return iconFileExtension[ext];
+  return IconFileExtension[ext];
 }

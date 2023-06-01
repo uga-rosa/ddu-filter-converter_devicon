@@ -3,9 +3,10 @@ import {
   DduItem,
 } from "https://deno.land/x/ddu_vim@v2.8.3/types.ts";
 import { basename } from "https://deno.land/std@0.188.0/path/mod.ts";
+import { isLike } from "https://deno.land/x/unknownutil@v2.1.0/is.ts";
 import { getIconData } from "../ddu-devicon/main.ts";
 
-const HIGHLIGHT_NAME = "ddu_devicon";
+const HIGHLIGHT_NAME = "ddu_devicon" as const satisfies string;
 
 type Params = {
   padding: number;
@@ -53,10 +54,12 @@ export class Filter extends BaseFilter<Params> {
         return item;
       }
 
-      const {
-        icon = filterParams.defaultIcon,
-        hl_group = filterParams.defaultIconColor,
-      } = getIconData(path);
+      const isDirectory = isLike({ action: { isDirectory: true } }, item)
+        ? item.action.isDirectory
+        : undefined;
+      const iconData = getIconData(path, isDirectory);
+      const icon = iconData.icon ?? filterParams.defaultIcon;
+      const hl_group = iconData.hl_group ?? filterParams.defaultIconColor;
 
       item.display = `${padding}${icon} ${display}`;
 

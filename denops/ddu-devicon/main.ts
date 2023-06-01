@@ -4,6 +4,7 @@ import {
   getDeviconDef,
   IconFileExtension,
   IconFilename,
+  IconFolder,
 } from "./def.ts";
 
 function getHighlightGroup(def: DeviconDef) {
@@ -22,18 +23,22 @@ type IconData = {
 
 export function getIconData(
   filename: string,
+  isFolder?: boolean,
 ): IconData {
-  const def = getDeviconDef(filename);
-  if (def) {
-    return { icon: def.icon, hl_group: getHighlightGroup(def) };
-  } else {
-    return {};
-  }
+  const def = getDeviconDef(filename, isFolder);
+  return {
+    icon: def?.icon,
+    hl_group: def && getHighlightGroup(def),
+  };
 }
 
 export function main(denops: Denops) {
   Promise.all(
-    [...Object.values(IconFilename), ...Object.values(IconFileExtension)]
+    [
+      ...Object.values(IconFilename),
+      ...Object.values(IconFileExtension),
+      IconFolder,
+    ]
       .map((def) => setupHighlight(denops, def)),
   );
 }
