@@ -11,7 +11,7 @@ const HIGHLIGHT_NAME = "ddu_devicon" as const satisfies string;
 type Params = {
   padding: number;
   defaultIcon: string;
-  defaultIconColor: string;
+  defaultIconHlgroup: string;
 };
 
 const ENCODER = new TextEncoder();
@@ -53,7 +53,7 @@ export class Filter extends BaseFilter<Params> {
         : undefined;
       const iconData = getIconData(path, isDirectory);
       const icon = iconData.icon ?? filterParams.defaultIcon;
-      const hl_group = iconData.hl_group ?? filterParams.defaultIconColor;
+      const hl_group = iconData.hl_group ?? filterParams.defaultIconHlgroup;
 
       item.display = `${padding}${icon} ${display}`;
 
@@ -83,7 +83,7 @@ export class Filter extends BaseFilter<Params> {
     return {
       padding: 0,
       defaultIcon: "",
-      defaultIconColor: "White",
+      defaultIconHlgroup: "",
     };
   }
 }
