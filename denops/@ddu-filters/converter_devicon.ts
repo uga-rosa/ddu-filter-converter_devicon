@@ -21,14 +21,8 @@ function byteLen(str: string) {
 }
 
 function getPath(item: DduItem): string | undefined {
-  if (
-    typeof item.action === "object" &&
-    item.action != null &&
-    "path" in item.action &&
-    typeof item.action.path === "string"
-  ) {
-    const fullpath = item.action.path;
-    return basename(fullpath);
+  if (isLike({ action: { path: "" } }, item)) {
+    return basename(item.action.path);
   }
 }
 
