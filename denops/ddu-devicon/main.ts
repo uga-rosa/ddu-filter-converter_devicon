@@ -15,13 +15,6 @@ async function setupHighlight(denops: Denops, def: DeviconDef) {
   await denops.cmd(`hi default ${hl_group} guifg=${def.color}`);
 }
 
-function setupHighlights(denops: Denops) {
-  Promise.all(
-    [...Object.values(iconFilename), ...Object.values(iconFileExtension)]
-      .map(async (def) => await setupHighlight(denops, def)),
-  );
-}
-
 type IconData = {
   icon?: string;
   hl_group?: string;
@@ -39,5 +32,8 @@ export function getIconData(
 }
 
 export function main(denops: Denops) {
-  setupHighlights(denops);
+  Promise.all(
+    [...Object.values(iconFilename), ...Object.values(iconFileExtension)]
+      .map((def) => setupHighlight(denops, def)),
+  );
 }
