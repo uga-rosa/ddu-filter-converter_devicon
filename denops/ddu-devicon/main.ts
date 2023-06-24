@@ -1,4 +1,5 @@
 import { Denops } from "https://deno.land/x/denops_std@v5.0.1/mod.ts";
+import { batch } from "https://deno.land/x/denops_std@v5.0.1/batch/mod.ts";
 import {
   DeviconDef,
   getDeviconDef,
@@ -33,12 +34,15 @@ export function getIconData(
 }
 
 export function main(denops: Denops) {
-  Promise.all(
-    [
-      ...Object.values(IconFilename),
-      ...Object.values(IconFileExtension),
-      IconFolder,
-    ]
-      .map((def) => setupHighlight(denops, def)),
-  );
+  batch(denops, async (denops) => {
+    for (
+      const def of [
+        ...Object.values(IconFilename),
+        ...Object.values(IconFileExtension),
+        IconFolder,
+      ]
+    ) {
+      await setupHighlight(denops, def);
+    }
+  });
 }
