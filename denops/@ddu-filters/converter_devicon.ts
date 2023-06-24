@@ -1,9 +1,9 @@
 import {
   BaseFilter,
   DduItem,
-} from "https://deno.land/x/ddu_vim@v2.8.3/types.ts";
-import { basename } from "https://deno.land/std@0.188.0/path/mod.ts";
-import { isLike } from "https://deno.land/x/unknownutil@v2.1.0/is.ts";
+} from "https://deno.land/x/ddu_vim@v3.2.6/types.ts";
+import { basename } from "https://deno.land/std@0.192.0/path/mod.ts";
+import { isLike } from "https://deno.land/x/unknownutil@v3.2.0/is.ts";
 import { getIconData } from "../ddu-devicon/main.ts";
 
 const HIGHLIGHT_NAME = "ddu_devicon" as const satisfies string;

@@ -1,4 +1,4 @@
-import { Denops } from "https://deno.land/x/denops_std@v4.3.3/mod.ts";
+import { Denops } from "https://deno.land/x/denops_std@v5.0.1/mod.ts";
 import {
   DeviconDef,
   getDeviconDef,
