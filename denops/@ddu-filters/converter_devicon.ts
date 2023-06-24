@@ -3,7 +3,7 @@ import {
   DduItem,
 } from "https://deno.land/x/ddu_vim@v3.2.6/types.ts";
 import { basename } from "https://deno.land/std@0.192.0/path/mod.ts";
-import { isLike } from "https://deno.land/x/unknownutil@v3.2.0/is.ts";
+import { is } from "https://deno.land/x/unknownutil@v3.2.0/mod.ts";
 import { getIconData } from "../ddu-devicon/main.ts";
 
 const HIGHLIGHT_NAME = "ddu_devicon" as const satisfies string;
@@ -21,7 +21,7 @@ function byteLen(str: string) {
 }
 
 function getPath(item: DduItem): string | undefined {
-  if (isLike({ action: { path: "" } }, item)) {
+  if (is.ObjectOf({ action: is.ObjectOf({ path: is.String }) })(item)) {
     return basename(item.action.path);
   }
 }
@@ -48,9 +48,10 @@ export class Filter extends BaseFilter<Params> {
         return item;
       }
 
-      const isDirectory = isLike({ action: { isDirectory: true } }, item)
-        ? item.action.isDirectory
-        : undefined;
+      const isDirectory =
+        is.ObjectOf({ action: is.ObjectOf({ isDirectory: is.Boolean }) })(item)
+          ? item.action.isDirectory
+          : undefined;
       const iconData = getIconData(path, isDirectory);
       const icon = iconData.icon ?? filterParams.defaultIcon;
       const hl_group = iconData.hl_group ?? filterParams.defaultIconHlgroup;
