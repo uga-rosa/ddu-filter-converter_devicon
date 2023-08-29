@@ -40,6 +40,33 @@ EXAMPLES				*ddu-filter-converter_devicon-examples*
 	    \     },
 	    \   }
 	    \ })
+
+	" customIcons setting examples
+	call ddu#custom#patch_global(#{
+	    \   sourceOptions: #{
+	    \     _: #{
+	    \       matchers: [ 'matcher_substring' ],
+	    \       converters: [ #{
+	    \         name: 'converter_devicon',
+	    \         params: #{
+	    \           specificFileIcons: #{
+	    \             devDockerfile: #{
+	    \               icon: '',
+	    \             },
+	    \           },
+	    \           customIcons: #{
+	    \             txt: #{
+	    \               icon: '',
+	    \             },
+	    \             Dockerfile: #{
+	    \               icon: '',
+	    \             },
+	    \           },
+	    \         },
+	    \       } ],
+	    \     },
+	    \   }
+	    \ })
 <
 
 ==============================================================================
@@ -63,6 +90,18 @@ defaultIconHlgroup	(string)
 	name.
 
 	Default: ""
+
+			 *ddu-filter-converter_devicon-param-specificFileIcons*
+specificFileIcons	(dictionary)
+	Sets the icon applied to a file with a specific name.
+
+	Default: {}
+
+			       *ddu-filter-converter_devicon-param-customIcons*
+customIcons	(dictionary)
+	Manually specify an icon for each extension.
+
+	Default: {}
 
 
 ==============================================================================

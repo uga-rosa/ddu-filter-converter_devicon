@@ -17,7 +17,7 @@ async function setupHighlight(denops: Denops, def: DeviconDef) {
   await denops.cmd(`hi default ${hl_group} guifg=${def.color}`);
 }
 
-type IconData = {
+export type IconData = {
   icon?: string;
   hl_group?: string;
 };
@@ -31,6 +31,33 @@ export function getIconData(
     icon: def?.icon,
     hl_group: def && getHighlightGroup(def),
   };
+}
+
+export function getSpecificFileIconData(
+  path: string,
+  specificFileIcons: Record<string, IconData>,
+  isFolder?: boolean,
+): IconData | undefined {
+  if (isFolder) return undefined
+  const filename = path.match(/[^\/]+$/)
+  if (filename != null) {
+    return specificFileIcons[filename[0]] ?? undefined
+  }
+}
+
+export function getCustomIconData(
+  path: string,
+  customIconData: Record<string, IconData>,
+  isFolder?: boolean,
+): IconData | undefined {
+  if (isFolder) return undefined
+  const def = getDeviconDef(path, isFolder);
+  const ext = path.replace(/(.*)\./, "");
+  if (!customIconData[ext]) return undefined
+  return {
+    icon: customIconData[ext].icon ?? (def?.icon ?? ''),
+    hl_group: customIconData[ext].hl_group ?? (def && getHighlightGroup(def))
+  }
 }
 
 export function main(denops: Denops) {
