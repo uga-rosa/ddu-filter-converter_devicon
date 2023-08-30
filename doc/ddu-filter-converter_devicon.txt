@@ -40,33 +40,6 @@ EXAMPLES				*ddu-filter-converter_devicon-examples*
 	    \     },
 	    \   }
 	    \ })
-
-	" customIcons setting examples
-	call ddu#custom#patch_global(#{
-	    \   sourceOptions: #{
-	    \     _: #{
-	    \       matchers: [ 'matcher_substring' ],
-	    \       converters: [ #{
-	    \         name: 'converter_devicon',
-	    \         params: #{
-	    \           specificFileIcons: #{
-	    \             devDockerfile: #{
-	    \               icon: '',
-	    \             },
-	    \           },
-	    \           customIcons: #{
-	    \             txt: #{
-	    \               icon: '',
-	    \             },
-	    \             Dockerfile: #{
-	    \               icon: '',
-	    \             },
-	    \           },
-	    \         },
-	    \       } ],
-	    \     },
-	    \   }
-	    \ })
 <
 
 ==============================================================================
@@ -93,14 +66,87 @@ defaultIconHlgroup	(string)
 
 			 *ddu-filter-converter_devicon-param-specificFileIcons*
 specificFileIcons	(dictionary)
-	Sets the icon applied to a file with a specific name.
+	Sets the icon applied to a file with a specific name. This param
+	should hold icon data keyed by file name. Icon data has icon
+	character and hl_group.
 
+	- icon data	(dictionary)
+	  Dictionary data with icon name as key.
+	  It holds the following two data.
+
+	  - icon		(string)
+	    Set the icon you want to use.
+	    Default: ""
+
+	  - hl_group		(string)
+	    Set the highlight group you want to use.
+	    Setting this parameter will color the icon.
+	    Default: ""
+
+	NOTE: specificFileIcons do not have hl_group set by default.
+	If you want the icon to have a color you have to set it yourself.
+
+	Example:
+	  - Specific filename is devDockerfile.
+	  - hl_group is DduDevIconRed.
+>
+	highlight DduDevIconRed guifg=red
+	call ddu#custom#patch_global(#{
+	    \   sourceOptions: #{
+	    \     _: #{
+	    \       matchers: [ 'matcher_substring' ],
+	    \       converters: [ #{
+	    \         name: 'converter_devicon',
+	    \         params: #{
+	    \           specificFileIcons: #{
+	    \             devDockerfile: #{
+	    \               icon: '',
+	    \               hl_group: 'DduDevIconRed',
+	    \             },
+	    \           },
+	    \         },
+	    \       } ],
+	    \     },
+	    \   }
+	    \ })
+<
 	Default: {}
 
 			       *ddu-filter-converter_devicon-param-customIcons*
 customIcons	(dictionary)
-	Manually specify an icon for each extension.
+	Manually specify an icon for each extension. This param	should hold
+	icon data keyed by file name. Icon data has icon character and
+	hl_group.
+	See |ddu-filter-converter_devicon-param-specificFileIcons| for types.
 
+	NOTE: You don't have to set hl_group if you use the built-in icon
+	color.
+
+	Example:
+	  - The target extension name is txt and Dockerfile.
+	  - Icon color is build-in.
+>
+	call ddu#custom#patch_global(#{
+	    \   sourceOptions: #{
+	    \     _: #{
+	    \       matchers: [ 'matcher_substring' ],
+	    \       converters: [ #{
+	    \         name: 'converter_devicon',
+	    \         params: #{
+	    \           customIcons: #{
+	    \             txt: #{
+	    \               icon: '',
+	    \             },
+	    \             Dockerfile: #{
+	    \               icon: '',
+	    \             },
+	    \           },
+	    \         },
+	    \       } ],
+	    \     },
+	    \   }
+	    \ })
+<
 	Default: {}
 
 

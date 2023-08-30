@@ -2,7 +2,7 @@ import {
   BaseFilter,
   DduItem,
 } from "https://deno.land/x/ddu_vim@v3.2.6/types.ts";
-import { basename } from "https://deno.land/std@0.192.0/path/mod.ts";
+import { basename } from "https://deno.land/std@0.200.0/path/mod.ts";
 import { is } from "https://deno.land/x/unknownutil@v3.2.0/mod.ts";
 import {
   getCustomIconData,
