@@ -51,7 +51,7 @@ export function getCustomIconData(
       hl_group: customIcon.hl_group ?? (def && getHighlightGroup(def)),
     };
   }
-  const ext = extname(filename).slice(1, extname(filename).length);
+  const ext = extname(filename).slice(1);
   customIcon = extentionIcon[ext];
   if (customIcon) {
     return {
