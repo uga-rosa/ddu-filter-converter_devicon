@@ -7,7 +7,6 @@ import { is } from "https://deno.land/x/unknownutil@v3.2.0/mod.ts";
 import {
   getCustomIconData,
   getIconData,
-  getSpecificFileIconData,
   IconData,
 } from "../ddu-devicon/main.ts";
 
@@ -18,7 +17,7 @@ type Params = {
   defaultIcon: string;
   defaultIconHlgroup: string;
   specificFileIcons: Record<string, IconData>;
-  customIcons: Record<string, IconData>;
+  extentionIcons: Record<string, IconData>;
 };
 
 const ENCODER = new TextEncoder();
@@ -59,11 +58,12 @@ export class Filter extends BaseFilter<Params> {
         is.ObjectOf({ action: is.ObjectOf({ isDirectory: is.Boolean }) })(item)
           ? item.action.isDirectory
           : undefined;
-      const customIcon = getSpecificFileIconData(
+      const customIcon = getCustomIconData(
         path,
         filterParams.specificFileIcons,
+        filterParams.extentionIcons,
         isDirectory,
-      ) ?? getCustomIconData(path, filterParams.customIcons, isDirectory);
+      );
       const iconData = customIcon ?? getIconData(path, isDirectory);
       const icon = iconData.icon ?? filterParams.defaultIcon;
       const hl_group = iconData.hl_group ?? filterParams.defaultIconHlgroup;
@@ -98,7 +98,7 @@ export class Filter extends BaseFilter<Params> {
       defaultIcon: "",
       defaultIconHlgroup: "",
       specificFileIcons: {},
-      customIcons: {},
+      extentionIcons: {},
     };
   }
 }

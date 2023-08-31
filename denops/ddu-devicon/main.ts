@@ -1,6 +1,6 @@
 import { Denops } from "https://deno.land/x/denops_std@v5.0.1/mod.ts";
 import { batch } from "https://deno.land/x/denops_std@v5.0.1/batch/mod.ts";
-import { basename, extname } from "https://deno.land/std@0.200.0/path/mod.ts";
+import { extname } from "https://deno.land/std@0.200.0/path/mod.ts";
 import {
   DeviconDef,
   getDeviconDef,
@@ -34,37 +34,31 @@ export function getIconData(
   };
 }
 
-export function getSpecificFileIconData(
-  path: string,
-  specificFileIcons: Record<string, IconData>,
-  isFolder?: boolean,
-): IconData | undefined {
-  if (isFolder) {
-    return undefined;
-  }
-  const filename = basename(path);
-  return specificFileIcons[filename] ?? undefined;
-}
-
 export function getCustomIconData(
-  path: string,
-  customIconData: Record<string, IconData>,
+  filename: string,
+  specificFileIcon: Record<string, IconData>,
+  extentionIcon: Record<string, IconData>,
   isFolder?: boolean,
 ): IconData | undefined {
   if (isFolder) {
     return undefined;
   }
-  const def = getDeviconDef(path, isFolder);
-  const ext = (extname(path) === "")
-    ? basename(path)
-    : extname(path).slice(1, extname(path).length);
-  if (!customIconData[ext]) {
-    return undefined;
+  const def = getDeviconDef(filename, isFolder);
+  let customIcon = specificFileIcon[filename];
+  if (customIcon) {
+    return {
+      icon: customIcon.icon ?? (def?.icon ?? ""),
+      hl_group: customIcon.hl_group ?? (def && getHighlightGroup(def)),
+    };
   }
-  return {
-    icon: customIconData[ext].icon ?? (def?.icon ?? ""),
-    hl_group: customIconData[ext].hl_group ?? (def && getHighlightGroup(def)),
-  };
+  const ext = extname(filename).slice(1, extname(filename).length);
+  customIcon = extentionIcon[ext];
+  if (customIcon) {
+    return {
+      icon: customIcon.icon ?? (def?.icon ?? ""),
+      hl_group: customIcon.hl_group ?? (def && getHighlightGroup(def)),
+    };
+  }
 }
 
 export function main(denops: Denops) {

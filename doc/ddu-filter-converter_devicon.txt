@@ -65,26 +65,26 @@ defaultIconHlgroup	(string)
 	Default: ""
 
 			 *ddu-filter-converter_devicon-param-specificFileIcons*
-specificFileIcons	(dictionary)
+specificFileIcons	(|Dictionary|)
 	Sets the icon applied to a file with a specific name. This param
 	should hold icon data keyed by file name. Icon data has icon
 	character and hl_group.
 
-	- icon data	(dictionary)
-	  Dictionary data with icon name as key.
+	- icon data	(|Dictionary|)
+	  |Dictionary| data with specific file name as key.
 	  It holds the following two data.
 
-	  - icon		(string)
+	  - icon		(string)	optional
 	    Set the icon you want to use.
-	    Default: ""
+	    Default: v:null
 
-	  - hl_group		(string)
+	  - hl_group		(string)	optional
 	    Set the highlight group you want to use.
 	    Setting this parameter will color the icon.
-	    Default: ""
+	    Default: v:null
 
-	NOTE: specificFileIcons do not have hl_group set by default.
-	If you want the icon to have a color you have to set it yourself.
+	NOTE: If the specific filename exists in the built-in, the built-in value
+	will automatically be used for items not set by the user.
 
 	Example:
 	  - Specific filename is devDockerfile.
@@ -112,18 +112,22 @@ specificFileIcons	(dictionary)
 <
 	Default: {}
 
-			       *ddu-filter-converter_devicon-param-customIcons*
-customIcons	(dictionary)
+			    *ddu-filter-converter_devicon-param-extentionIcons*
+extentionIcons	(|Dictionary|)
 	Manually specify an icon for each extension. This param	should hold
-	icon data keyed by file name. Icon data has icon character and
+	icon data keyed by extention name. Icon data has icon character and
 	hl_group.
-	See |ddu-filter-converter_devicon-param-specificFileIcons| for types.
 
-	NOTE: You don't have to set hl_group if you use the built-in icon
-	color.
+	- icon data	(|Dictionary|)
+	  |Dictionary| data with extension name as key.
+	  See the |ddu-filter-converter_devicon-param-specificFileIcons| for
+	  the data this dictionary holds.
+
+	NOTE: If there is a conflict with the setting of specificFileIcons,
+	the value of specificFileIcons takes precedence.
 
 	Example:
-	  - The target extension name is txt and Dockerfile.
+	  - The target extension name is txt and svg.
 	  - Icon color is build-in.
 >
 	call ddu#custom#patch_global(#{
@@ -133,12 +137,12 @@ customIcons	(dictionary)
 	    \       converters: [ #{
 	    \         name: 'converter_devicon',
 	    \         params: #{
-	    \           customIcons: #{
+	    \           extentionIcons: #{
 	    \             txt: #{
 	    \               icon: '',
 	    \             },
-	    \             Dockerfile: #{
-	    \               icon: '',
+	    \             svg: #{
+	    \               icon: '',
 	    \             },
 	    \           },
 	    \         },
