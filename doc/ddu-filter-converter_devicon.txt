@@ -64,6 +64,95 @@ defaultIconHlgroup	(string)
 
 	Default: ""
 
+			 *ddu-filter-converter_devicon-param-specificFileIcons*
+specificFileIcons	(|Dictionary|)
+	Sets the icon applied to a file with a specific name. This param
+	should hold icon data keyed by file name. Icon data has icon
+	character and hl_group.
+
+	- icon data	(|Dictionary|)
+	  |Dictionary| data with specific file name as key.
+	  It holds the following two data.
+
+	  - icon		(string)	optional
+	    Set the icon you want to use.
+	    Default: v:null
+
+	  - hl_group		(string)	optional
+	    Set the highlight group you want to use.
+	    Setting this parameter will color the icon.
+	    Default: v:null
+
+	NOTE: If the specific filename exists in the built-in, the built-in value
+	will automatically be used for items not set by the user.
+
+	Example:
+	  - Specific filename is devDockerfile.
+	  - hl_group is DduDevIconRed.
+>
+	highlight DduDevIconRed guifg=red
+	call ddu#custom#patch_global(#{
+	    \   sourceOptions: #{
+	    \     _: #{
+	    \       matchers: [ 'matcher_substring' ],
+	    \       converters: [ #{
+	    \         name: 'converter_devicon',
+	    \         params: #{
+	    \           specificFileIcons: #{
+	    \             devDockerfile: #{
+	    \               icon: '',
+	    \               hl_group: 'DduDevIconRed',
+	    \             },
+	    \           },
+	    \         },
+	    \       } ],
+	    \     },
+	    \   }
+	    \ })
+<
+	Default: {}
+
+			    *ddu-filter-converter_devicon-param-extentionIcons*
+extentionIcons	(|Dictionary|)
+	Manually specify an icon for each extension. This param	should hold
+	icon data keyed by extention name. Icon data has icon character and
+	hl_group.
+
+	- icon data	(|Dictionary|)
+	  |Dictionary| data with extension name as key.
+	  See the |ddu-filter-converter_devicon-param-specificFileIcons| for
+	  the data this dictionary holds.
+
+	NOTE: If there is a conflict with the setting of specificFileIcons,
+	the value of specificFileIcons takes precedence.
+
+	Example:
+	  - The target extension name is txt and svg.
+	  - Icon color is build-in.
+>
+	call ddu#custom#patch_global(#{
+	    \   sourceOptions: #{
+	    \     _: #{
+	    \       matchers: [ 'matcher_substring' ],
+	    \       converters: [ #{
+	    \         name: 'converter_devicon',
+	    \         params: #{
+	    \           extentionIcons: #{
+	    \             txt: #{
+	    \               icon: '',
+	    \             },
+	    \             svg: #{
+	    \               icon: '',
+	    \             },
+	    \           },
+	    \         },
+	    \       } ],
+	    \     },
+	    \   }
+	    \ })
+<
+	Default: {}
+
 
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:noet:fen:noet:

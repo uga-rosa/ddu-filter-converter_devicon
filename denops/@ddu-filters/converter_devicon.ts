@@ -2,9 +2,13 @@ import {
   BaseFilter,
   DduItem,
 } from "https://deno.land/x/ddu_vim@v3.2.6/types.ts";
-import { basename } from "https://deno.land/std@0.192.0/path/mod.ts";
+import { basename } from "https://deno.land/std@0.200.0/path/mod.ts";
 import { is } from "https://deno.land/x/unknownutil@v3.2.0/mod.ts";
-import { getIconData } from "../ddu-devicon/main.ts";
+import {
+  getCustomIconData,
+  getIconData,
+  IconData,
+} from "../ddu-devicon/main.ts";
 
 const HIGHLIGHT_NAME = "ddu_devicon" as const satisfies string;
 
@@ -12,6 +16,8 @@ type Params = {
   padding: number;
   defaultIcon: string;
   defaultIconHlgroup: string;
+  specificFileIcons: Record<string, IconData>;
+  extentionIcons: Record<string, IconData>;
 };
 
 const ENCODER = new TextEncoder();
@@ -52,7 +58,13 @@ export class Filter extends BaseFilter<Params> {
         is.ObjectOf({ action: is.ObjectOf({ isDirectory: is.Boolean }) })(item)
           ? item.action.isDirectory
           : undefined;
-      const iconData = getIconData(path, isDirectory);
+      const customIcon = getCustomIconData(
+        path,
+        filterParams.specificFileIcons,
+        filterParams.extentionIcons,
+        isDirectory,
+      );
+      const iconData = customIcon ?? getIconData(path, isDirectory);
       const icon = iconData.icon ?? filterParams.defaultIcon;
       const hl_group = iconData.hl_group ?? filterParams.defaultIconHlgroup;
 
@@ -85,6 +97,8 @@ export class Filter extends BaseFilter<Params> {
       padding: 0,
       defaultIcon: "",
       defaultIconHlgroup: "",
+      specificFileIcons: {},
+      extentionIcons: {},
     };
   }
 }
